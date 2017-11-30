@@ -1,5 +1,2 @@
 # StatMech
-<<<<<<< HEAD
-
-=======
->>>>>>> master
+A repository for our statistical mechanics report
