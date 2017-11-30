@@ -1,4 +1,4 @@
-# StatMech_handin3
+# StatMech
 <<<<<<< HEAD
 
 =======
