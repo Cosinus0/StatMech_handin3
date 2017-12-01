@@ -3,5 +3,34 @@
 
 \section{Gibbs Free Energy and Pressure}
 
+The Gibbs free energy is one of the four thermodynamic potentials that is used to calculate the energy of a system under constant pressure $P$ and constant temperature $T$. It is defined as:
+
+\begin{align}
+G \equiv& H - TS \\
+  \equiv& U +PV -TS 	
+\end{align}
+
+With this you can derive the thermodynamic identity for Gibbs free energy, and using $dU = TdS - PdV + \mu dN$:
+
+\begin{align}
+dG =& dU + PdV + VdP -TdS -SdT \\
+   =& TdS - PdV + \mu dN + PdV + VdP -TdS -SdT \\ 
+   =& -SdT + VdP + \mu dN
+\end{align}
+
+From this relation the following three relations can be seen:
+
+\begin{align}
+S = - \left( \frac{dG}{dT} \right)_{P,N} \\
+V = - \left( \frac{dG}{dP} \right)_{T,N} \\
+\mu = - \left( \frac{dG}{dN} \right)_{T,P} 
+\end{align}
+
+From this we can see that there is a relation between entropy and Gibbs free energy. Thus we can integrate the entropy with respect to the temperature while holding pressure and the number of particles constant to find the Gibbs free energy of the system. For non-isolated systems, at constant pressure and temperature and no particles are also to enter or leave the system, it can be derived that the increase of entropy and the same as a decrease in the Gibbs free energy, in other words, the system will try to minimise its Gibbs free energy. This relationship is given by:
+
+\begin{equation}
+dS_{Total} = - \frac{1}{T} dG
+\end{equation}
+
 
 \end{document}
