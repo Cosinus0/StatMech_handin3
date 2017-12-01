@@ -17,6 +17,7 @@
 \usepackage[bookmarks,hidelinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage{subfiles}
 \usepackage{subfigure}
 \usepackage{listings}
 \usepackage{float}
@@ -42,30 +43,37 @@
 } 
 \begin{document}
 \title{Simulating mixing particles}
-\author{Daniel Olesen Fejerskov, Mikkel Sakse Andersen Bennetsen, \\ Nathan Hugh Barr}
+\author{Daniel O. Fejerskov, Mikkel S. Andersen Bennetsen, Nathan H. Barr}
 \maketitle
 \tableofcontents
 
 \chapter{Introduction}
-
+In this report, we will simulate a system consisting of two different kinds of particles. In order to facilitate the presentation of the actual simulation itself, the first part of this report will be largely theoretical in nature. Here, we will describe the physical nature of the process that takes place when different kinds of particles interact and mix. The simulation itself is a Monte Carlo simulation, or more specifically the Metropolis algorithm. As this method of simulation was introduced in an earlier report in this course, we will not describe it in great detail, and only where it has relevance to the simulation itself. The second part of the report presents the method of simulation, as well as the results of it.
 
 \chapter{Theory of Mixing}
+In this section, we introduce the more important physical terms used in the report, and their relevance to the system we simulate. The goal of this report is to be able to make observations regarding the way the two types of particles interact. Specifically, a focal point of the report is to be able to show a phase diagram of their mixture. Further, we will be able to calculate, among other things the pressure of the system. This is done by determining the heat capacity of the system. From this we can calculate the entropy of the system, as a function of temperature. This result, in turn, we can use to calculate the Gibbs free energy of the system. This finally allows us to determine the pressure of the system.
+
+\section{Heat Capacity and Entropy}
+To calculate the heat capacity, we use the fluctuation function:
+
+\begin{equation}
+C_V = \left( \frac{\partial \langle E \rangle}{\partial T} \right)_{V,N}
+\end{equation}
+
+Here, the energy is simply an ensemble average. The point of calculating the heat capacity of our system is to be able to calculate the entropy. The calculation is naturally not straightforward in a simulation, but the general way of undertaking the operation is to realise that the heat capacity is related to the entropy by:
+\begin{equation}
+\frac{C_V}{T} = \left( \frac{\partial S}{\partial T}\right)_V
+\end{equation}
+
+Following this, we shall perform a thermodynamic integration of our result. This essentially means that we integrate at several different temperatures, in order to obtain the entropy of the system. In the next section, we summarise why this result is useful for calculating the Gibbs free energy and the pressure.
+
+\subfile{gibbs.tex}
 
 
 \chapter{Simulation}
 
 
-\section{Heat Capacity, Entropy}
-
-
-\subfile{gibbs.tex}
-
-
-
-\section{Phase diagrams}
-
-
-\section{Conclusion}
+\chapter{Conclusion}
 
 
 \end{document}
