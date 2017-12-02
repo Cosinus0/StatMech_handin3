@@ -5,38 +5,48 @@
 
 The Gibbs free energy is one of the four thermodynamic potentials that is used to calculate the energy of a system under constant pressure $P$ and constant temperature $T$. It is defined as:
 
-\begin{align}
-G \equiv& H - TS \\
-  \equiv& U +PV -TS 	
+\begin{align} 
+G \equiv& H - TS \nonumber \\
+  \equiv& U +PV -TS \label{Gibbs}	
 \end{align}
 
 With this you can derive the thermodynamic identity for Gibbs free energy, and using $dU = TdS - PdV + \mu dN$:
 
 \begin{align}
-dG =& dU + PdV + VdP -TdS -SdT \\
-   =& TdS - PdV + \mu dN + PdV + VdP -TdS -SdT \\ 
+dG =& dU + PdV + VdP -TdS -SdT \nonumber \\
+   =& TdS - PdV + \mu dN + PdV + VdP -TdS -SdT \nonumber \\ 
    =& -SdT + VdP + \mu dN
 \end{align}
 
 From this relation the following three relations can be seen:
 
 \begin{align}
-S = - \left( \frac{dG}{dT} \right)_{P,N} \\
-V = - \left( \frac{dG}{dP} \right)_{T,N} \\
-\mu = - \left( \frac{dG}{dN} \right)_{T,P} 
+S = - \left( \frac{dG}{dT} \right)_{P,N} \label{SandG} \\
+V = - \left( \frac{dG}{dP} \right)_{T,N} \nonumber \\
+\mu = - \left( \frac{dG}{dN} \right)_{T,P} \nonumber 
 \end{align}
 
-From this we can see that there is a relation between entropy and Gibbs free energy. Thus we can integrate the entropy with respect to the temperature while holding pressure and the number of particles constant to find the Gibbs free energy of the system.
+From equation \ref{SandG}, we can see that there is a relation between entropy and Gibbs free energy. Thus we can integrate the entropy with respect to the temperature while holding pressure and the number of particles constant to find the Gibbs free energy of the system.
 
 \begin{equation}
 G = \int_{T_i}^{T_f} -SdT
 \end{equation}
+
+Gibbs free energy can also be defined by the chemical potential multiplied by the number of particles in the system:
+
+\begin{equation}
+G = \mu \cdot N
+\end{equation} 
+
+This means that the chemical potential $\mu$ is the Gibbs free energy per particle.
 
 For non-isolated systems, at constant pressure and temperature and no particles are also to enter or leave the system, it can be derived that the increase of entropy and the same as a decrease in the Gibbs free energy, in other words, the system will try to minimise its Gibbs free energy. This relationship is given by:
 
 \begin{equation}
 dS_{Total} = - \frac{1}{T} dG
 \end{equation}
+
+Looking at the definition for Gibbs free energy in equation \ref{Gibbs}, we can see that the entropy can increase in two ways, the system can decrease in both energy and volume, giving the two to the surrounding environment to maximise the entropy.   
 
 
 \end{document}
