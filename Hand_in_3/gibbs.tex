@@ -55,21 +55,21 @@ dS_{Total} = - \frac{1}{T} dG
 \end{equation}
 Looking at the definition for Gibbs free energy in equation \ref{Gibbs}, we can see that the entropy can increase in two ways: the system can decrease in both energy and volume, giving the two to the surrounding environment to maximise the entropy.
 
-\section{Phase diagram of Mixing}
-
-In our simulation, we will be looking at how a system of two particles mix. The Gibbs free energy can be used to understand this behaviour. For a system of two particles, the Gibbs free energy of an unmixed system can be described as a linear function:
-
-\begin{align}
-G \quad =& \quad (1-x)G_A^o + xG_B^o \\
-  =& \quad G_A^o + (G_B^o- G_A^o)x	
-\end{align}   
-where x is the fraction of B particles, and $G^o$ denotes Gibbs free energy per mole. If the partition between the system was to be taken out, the two particle types would mix. If the energy, volume or entropy changes the Gibbs free energy changes. The energy can increase or decrease due to the interactions between the particles, the volume can also change due to the forces acting upon the particles and also their size. The entropy will always increase due to the multiplicity. Neglecting changes in energy and volume, the Gibbs free energy for an ideal mixture can be written using the entropy of mixing:
-
-\begin{align}
-G \quad =& \quad \text{ideal unmixed} - \text{entropy of mixing}\\ 
-G \quad =& \quad (1-x)G_A^o + xG_B^o - \left(- RT \left[ x \ln x + (1-x) \ln (1-x) \right] \right)
-\end{align} 
-There is a competition of which term is more dominant for non-zero temperatures, concave down from the mixing energies and concave up from $-T$.
+%\section{Phase diagram of Mixing}
+%
+%In our simulation, we will be looking at how a system of two particles mix. The Gibbs free energy can be used to understand this behaviour. For a system of two particles, the Gibbs free energy of an unmixed system can be described as a linear function:
+%
+%\begin{align}
+%G \quad =& \quad (1-x)G_A^o + xG_B^o \\
+%  =& \quad G_A^o + (G_B^o- G_A^o)x	
+%\end{align}   
+%where x is the fraction of B particles, and $G^o$ denotes Gibbs free energy per mole. If the partition between the system was to be taken out, the two particle types would mix. If the energy, volume or entropy changes the Gibbs free energy changes. The energy can increase or decrease due to the interactions between the particles, the volume can also change due to the forces acting upon the particles and also their size. The entropy will always increase due to the multiplicity. Neglecting changes in energy and volume, the Gibbs free energy for an ideal mixture can be written using the entropy of mixing:
+%
+%\begin{align}
+%G \quad =& \quad \text{ideal unmixed} - \text{entropy of mixing}\\ 
+%G \quad =& \quad (1-x)G_A^o + xG_B^o - \left(- RT \left[ x \ln x + (1-x) \ln (1-x) \right] \right)
+%\end{align} 
+%There is a competition of which term is more dominant for non-zero temperatures, concave down from the mixing energies and concave up from $-T$.
 
 
 \end{document}
