@@ -59,18 +59,15 @@ To calculate the heat capacity, we use the fluctuation function:
 \begin{equation}
 C_V = \left( \frac{\partial \langle E \rangle}{\partial T} \right)_{V,N}
 \end{equation}
-
 Here, the energy is simply an ensemble average. The point of calculating the heat capacity of our system is to be able to calculate the entropy. The calculation is naturally not straightforward in a simulation, but the general way of undertaking the operation is to realise that the heat capacity is related to the entropy by:
 \begin{equation}
 \frac{C_V}{T} = \left( \frac{\partial S}{\partial T}\right)_V
 \end{equation}
-
 In turn, this means that:
 
 \begin{equation}
 S = \int^{T_f}_{T_i} \frac{C_V}{T}\ dT
 \end{equation}
-
 Following this, we shall perform a thermodynamic integration of our result. This essentially means that we integrate at several different temperatures, in order to obtain the entropy of the system, as written above. In the next section, we summarise why this result is useful for calculating the Gibbs free energy and the pressure.
 
 \subfile{gibbs.tex}
@@ -79,6 +76,27 @@ Following this, we shall perform a thermodynamic integration of our result. This
 
 
 \chapter{Simulation}
+
+\section{Calculating Entropy}
+As seen, entropy can be calculated by an integral, but before that can be used, we need an initial condition. The following is how we have calculated the initial condition where the temperature is equal to $\infty$. When our temperature approaches $\infty$, all states become equally probable. The multiplicity can be calculated as:
+
+\begin{align}
+\Omega=&\binom{N_A+N_B}{N_A}\binom{L^2}{N_A+N_B}, \;\; N_A+N_B\neq 0\\
+=&\left(\frac{(N_A+N_B)!}{N_A!(N_A+N_B-N_A)!}\right) \left(\frac{L^2!}{(N_A+N_B)!(L^2-N_A+N_B)!}\right)
+\end{align}
+The entropy can be calculated as:
+
+\begin{align}
+S =& k_b \ln \left( \frac{(N_A+N_B)!}{N_A!(N_A+N_B-N_A)!}\right) \left( \frac{L^2!}{(N_A+N_B)!(L^2-N_A+N_B)!}\right)\\
+=& k_b \left( \ln(m!)-\ln(N_A!)-\ln((m-N_A)!)+\ln(L^2!)-\ln(m!)- \ln((L^2-m)!) \right)\\
+\approx& k_b [ m\ln(m)-m -((N_A\ln(N_A)-N_A)) - ((m-N_A)\ln(m-N_A)-(m-N_A)) \\ 
+& +(L^2 \ln(L^2)-L^2)-(m\ln(m)-m)-((L^2-m)\ln(L^2-m)-(L^2-m)) ] \\
+=& k_b[	m\ln(m)-m - N_A\ln(N_A)+N_A-(m-N_A)\ln(m-N_A)+m-N_A \\
+& +L^2\ln(L^2)-L^2 - m\ln(m)+m - (L^2-m)\ln(L^2-m)+L^2-m] \\
+=& -N_A\ln(N_A)-(m-N_A)\ln(m-N_A)+L^2\ln(L^2)-(L^2-m)\ln(L^2-m)\\
+=& -N_A\ln(N_A)-(N_B)\ln(N_B)+2L^2\ln(L)-(L^2-N_A-N_B)\ln(L^2-N_A-N_B)
+\end{align}
+Normally you can not use $S = k_b\ln(\Omega)$, but at temperature $T=\infty$, we can work in a micro canonical ensemble because all states have an equal probability and equal energy.  
 
 
 \chapter{Conclusion}
