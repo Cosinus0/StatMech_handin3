@@ -6,27 +6,27 @@
 The Gibbs free energy is one of the four thermodynamic potentials that is used to calculate the energy of a system under constant pressure $P$ and constant temperature $T$. It is defined as:
 
 \begin{align} 
-G \equiv& H - TS \nonumber \\
-  \equiv& U +PV -TS \label{Gibbs}	
+G \quad \equiv& \quad H - TS \nonumber \\
+  \equiv& \quad U +PV -TS \label{Gibbs}	
 \end{align}
 
 With this you can derive the thermodynamic identity for Gibbs free energy, and using $dU = TdS - PdV + \mu dN$:
 
 \begin{align}
-dG =& dU + PdV + VdP -TdS -SdT \nonumber \\
-   =& TdS - PdV + \mu dN + PdV + VdP -TdS -SdT \nonumber \\ 
-   =& -SdT + VdP + \mu dN
+dG =& \quad dU + PdV + VdP -TdS -SdT \nonumber \\
+   =& \quad TdS - PdV + \mu dN + PdV + VdP -TdS -SdT \nonumber \\ 
+   =& \quad -SdT + VdP + \mu dN
 \end{align}
 
 From this relation the following three relations can be seen:
 
 \begin{align}
-S = - \left( \frac{dG}{dT} \right)_{P,N} \label{SandG} \\
-V = - \left( \frac{dG}{dP} \right)_{T,N} \nonumber \\
-\mu = - \left( \frac{dG}{dN} \right)_{T,P} \nonumber 
+S \quad = \quad - \left( \frac{dG}{dT} \right)_{P,N} \label{SandG} \\
+V \quad = \quad - \left( \frac{dG}{dP} \right)_{T,N} \nonumber \\
+\mu \quad = \quad - \left( \frac{dG}{dN} \right)_{T,P} \nonumber 
 \end{align}
 
-From equation \ref{SandG}, we can see that there is a relation between entropy and Gibbs free energy. Thus we can integrate the entropy with respect to the temperature while holding pressure and the number of particles constant to find the Gibbs free energy of the system.
+From equation \ref{SandG}, we can see that there is a relation between entropy and Gibbs free energy. Thus, we can integrate the entropy with respect to the temperature while holding pressure and the number of particles constant to find the Gibbs free energy of the system.
 
 \begin{equation}
 G = \int_{T_i}^{T_f} -SdT
@@ -40,31 +40,31 @@ G = \mu \cdot N
 
 This means that the chemical potential $\mu$ is the Gibbs free energy per particle.
 
-For non-isolated systems, at constant pressure and temperature and no particles are also to enter or leave the system, it can be derived that the increase of entropy and the same as a decrease in the Gibbs free energy, in other words, the system will try to minimise its Gibbs free energy. This relationship is given by:
+For non-isolated systems at constant pressure and temperature, in which no particles are allowed to enter or leave the system, it can be derived that the increase of entropy is the same as a decrease in the Gibbs free energy. In other words, the system will try to minimise its Gibbs free energy. This relationship is given by:
 
 \begin{equation}
 dS_{Total} = - \frac{1}{T} dG
 \end{equation}
 
-Looking at the definition for Gibbs free energy in equation \ref{Gibbs}, we can see that the entropy can increase in two ways, the system can decrease in both energy and volume, giving the two to the surrounding environment to maximise the entropy.
+Looking at the definition for Gibbs free energy in equation \ref{Gibbs}, we can see that the entropy can increase in two ways: the system can decrease in both energy and volume, giving the two to the surrounding environment to maximise the entropy.
 
 \section{Phase diagram of Mixing}
 
 In our simulation, we will be looking at how a system of two particles mix. The Gibbs free energy can be used to understand this behaviour. For a system of two particles, the Gibbs free energy of an unmixed system can be described as a linear function:
 
 \begin{align}
-G =& (1-x)G_A^o + xG_B^o \\
-  =& G_A^o + (G_B^o- G_A^o)x	
+G \quad =& \quad (1-x)G_A^o + xG_B^o \\
+  =& \quad G_A^o + (G_B^o- G_A^o)x	
 \end{align}   
 
-where x is the fraction of B particles, and $G^o$ denotes Gibbs free energy per mole. If the partition between the system was to be taken out, the two particle types would mix. If the energy, volume or entropy change the Gibbs free energy changes. The energy can increase or decrease due to the interacts between the particles, the volume can also change due to the forces acting upon the particles and also their size. The entropy will always increase due to the multiplicity. Neglecting changes in energy and volume, the Gibbs free energy for an ideal mixture can be written using the entropy of mixing:
+where x is the fraction of B particles, and $G^o$ denotes Gibbs free energy per mole. If the partition between the system was to be taken out, the two particle types would mix. If the energy, volume or entropy changes the Gibbs free energy changes. The energy can increase or decrease due to the interactions between the particles, the volume can also change due to the forces acting upon the particles and also their size. The entropy will always increase due to the multiplicity. Neglecting changes in energy and volume, the Gibbs free energy for an ideal mixture can be written using the entropy of mixing:
 
 \begin{align}
-G =& \text{ideal unmixed} - \text{entropy of mixing}\\ 
-G =& (1-x)G_A^o + xG_B^o - \left(- RT \left[ x \ln x + (1-x) \ln (1-x) \right] \right)
+G \quad =& \quad \text{ideal unmixed} - \text{entropy of mixing}\\ 
+G \quad =& \quad (1-x)G_A^o + xG_B^o - \left(- RT \left[ x \ln x + (1-x) \ln (1-x) \right] \right)
 \end{align} 
 
-There is a competition of which term is more dominant for non-zero temperatures, concave down from the mixing energies and concave up from $-T$ 
+There is a competition of which term is more dominant for non-zero temperatures, concave down from the mixing energies and concave up from $-T$.
 
 
 \end{document}
